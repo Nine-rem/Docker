@@ -19,14 +19,14 @@ const fs = require('fs');
 app.use(express.json());
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:5173'
+  origin: 'http://localhost:3000'
 }))
 app.use(express.json())
  
 app.use(cookieParser());
 app.use("/uploads",express.static(__dirname + '/uploads'));
 
-const DOMAIN = 'http://localhost:5173';
+const DOMAIN = 'http://localhost:3000';
 /* ----------------------------------------------------------
       Gestion des utilisateurs
 ---------------------------------------------------------- */

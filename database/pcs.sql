@@ -579,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `pcs_utilisateur` (
   `est_bailleur` tinyint(1) NOT NULL,
   `est_prestataire` tinyint(1) NOT NULL,
   `est_banni` tinyint(1) NOT NULL,
-  `token` char(60) DEFAULT NULL,
+  `token` TEXT DEFAULT NULL,
   PRIMARY KEY (`id_utilisateur`),
   UNIQUE KEY `email` (`email_utilisateur`),
   KEY `langue` (`langue_utilisateur`)
