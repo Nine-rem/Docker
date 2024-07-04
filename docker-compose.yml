@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+ database:
+  image: mysql:latest
+  container_name: pcs_database
+  env_file:
+   - .env
+  environment:
+   MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+   MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+  secrets:
+   - mysql_root_password
+   - mysql_password
+  ports:
+   - "3306:3306"
+  volumes:
+   - mysql_data:/var/lib/mysql
+   - ./pcs.sql:/docker-entrypoint-initdb.d/pcs.sql
+  networks:
+   - pcs-network
+
+ api:
+  build:
+   context: ./api
+   dockerfile: Dockerfile
+  container_name: pcs_backend
+  ports:
+   - "5000:5000"
+  networks:
+   - pcs-network
+
+ client:
+  build:
+   context: ./client
+   dockerfile: Dockerfile
+  container_name: pcs_frontend
+  ports:
+   - "80:80"
+  networks:
+   - pcs-network
+
+volumes:
+ mysql_data:
+
+networks:
+ pcs-network:
+  driver: bridge
+
+secrets:
+ mysql_root_password:
+  file: ./secrets/mysql_root_password.secret
+ mysql_password:
+  file: ./secrets/mysql_password.secret
