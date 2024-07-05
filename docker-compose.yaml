@@ -47,7 +47,7 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: pcs-phpmyadmin
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: 
     ports:
       - "8080:80"
     depends_on:
@@ -56,7 +56,7 @@ services:
 
 networks:
   app-network:
-    external: true
-
+    #external: false
+    driver: bridge
 volumes:
   db-data:

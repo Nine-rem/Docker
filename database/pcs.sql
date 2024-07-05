@@ -765,7 +765,7 @@ ADD `statut_reservation` TINYINT NOT NULL;
 
 
 
-
+/*
 ----------------------------------------------------------------------
 -- Insertion de données de test
 ----------------------------------------------------------------------
@@ -813,7 +813,7 @@ INSERT INTO `pcs_type_piece` (`id_type_piece`, `nom_type_piece`) VALUES
 
 -- Biens
 -- Insertion de biens
-/*
+
 INSERT INTO `pcs_bien` (`id_bien`,`nom_bien`, `statut_bien`, `adresse_bien`, `cp_bien`, `ville_bien`, `type_location_bien`, `capacite_bien`, `surface_bien`, `animal_ok_bien`, `PMR_ok_bien`, `description_bien`, `tarif_bien`, `bailleur`, `agence_principale_bien`) VALUES
 (1,'Villa avec vue sur la mer', 0, '5 rue Goury', '77654', 'Villeneuve la Garenne', 'Logement entier', 9, 150.00, 1, 1, 'Villa luxueuse avec vue sur la mer.', 130.00, 2, 1),
 (2,'Appartement cosy', 0, '10 rue des Lilas', '75000', 'Paris', 'Appartement', 4, 60.00, 0, 0, 'Appartement confortable au centre-ville.', 80.00, 2, 1),
