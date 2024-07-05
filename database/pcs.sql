@@ -765,7 +765,7 @@ ADD `statut_reservation` TINYINT NOT NULL;
 
 
 
-
+/*
 ----------------------------------------------------------------------
 -- Insertion de données de test
 ----------------------------------------------------------------------
@@ -813,13 +813,13 @@ INSERT INTO `pcs_type_piece` (`id_type_piece`, `nom_type_piece`) VALUES
 
 -- Biens
 -- Insertion de biens
-/*
-INSERT INTO `pcs_bien` (`id_bien`,`nom_bien`, `statut_bien`, `adresse_bien`, `cp_bien`, `ville_bien`, `type_location_bien`, `capacite_bien`, `surface_bien`, `animal_ok_bien`, `PMR_ok_bien`, `description_bien`, `tarif_bien`, `bailleur`, `agence_principale_bien`) VALUES
-(1,'Villa avec vue sur la mer', 0, '5 rue Goury', '77654', 'Villeneuve la Garenne', 'Logement entier', 9, 150.00, 1, 1, 'Villa luxueuse avec vue sur la mer.', 130.00, 2, 1),
-(2,'Appartement cosy', 0, '10 rue des Lilas', '75000', 'Paris', 'Appartement', 4, 60.00, 0, 0, 'Appartement confortable au centre-ville.', 80.00, 2, 1),
-(3,'Chalet en montagne', 0, '12 chemin des Neiges', '73000', 'Chambéry', 'Chalet', 6, 120.00, 1, 1, 'Chalet chaleureux au cœur des montagnes.', 150.00, 2, 1),
-(4,'Maison de campagne', 0, '8 rue de la Forêt', '45000', 'Orléans', 'Maison', 5, 110.00, 1, 0, 'Maison tranquille entourée de nature.', 100.00, 2, 1),
-(5,'Studio moderne', 0, '3 avenue des Champs', '06000', 'Nice', 'Studio', 2, 30.00, 0, 0, 'Studio moderne et bien équipé.', 70.00, 2, 1);
+
+INSERT INTO `pcs_bien` (`id_bien`,`nom_bien`, `statut_bien`, `adresse_bien`, `cp_bien`, `ville_bien`, `type_location_bien`, `capacite_bien`, `surface_bien`, `animal_ok_bien`, `PMR_ok_bien`, `description_bien`, `tarif_bien`, `bailleur`, `agence_principale_bien`,`heure_arrivee`,`heure_depart`) VALUES
+(1,'Villa avec vue sur la mer', 0, '5 rue Goury', '77654', 'Villeneuve la Garenne', 'Logement entier', 9, 150.00, 1, 1, 'Villa luxueuse avec vue sur la mer.', 130.00, 2, 1, 0, 0),
+(2,'Appartement cosy', 0, '10 rue des Lilas', '75000', 'Paris', 'Appartement', 4, 60.00, 0, 0, 'Appartement confortable au centre-ville.', 80.00, 2, 1, 0, 0),
+(3,'Chalet en montagne', 0, '12 chemin des Neiges', '73000', 'Chambéry', 'Chalet', 6, 120.00, 1, 1, 'Chalet chaleureux au cœur des montagnes.', 150.00, 2, 1, 0, 0),
+(4,'Maison de campagne', 0, '8 rue de la Forêt', '45000', 'Orléans', 'Maison', 5, 110.00, 1, 0, 'Maison tranquille entourée de nature.', 100.00, 2, 1, 0, 0),
+(5,'Studio moderne', 0, '3 avenue des Champs', '06000', 'Nice', 'Studio', 2, 30.00, 0, 0, 'Studio moderne et bien équipé.', 70.00, 2, 1, 0, 0);
 
 -- Pièces pour chaque bien
 -- Villa avec vue sur la mer
