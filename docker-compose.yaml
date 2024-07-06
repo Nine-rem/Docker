@@ -45,7 +45,7 @@ services:
       timeout: 5s
       retries: 3
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: /oot
       MYSQL_DATABASE: pcs
       MYSQL_USER: PCS
       MYSQL_PASSWORD: pa2024
