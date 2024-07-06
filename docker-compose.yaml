@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-  image: ninerem/docker-frontend:latest
+    image: ninerem/docker-frontend:latest
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -33,11 +33,6 @@ services:
       DB_NAME: pcs
     secrets:
       - db_password
-    environment:
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
-      MYSQL_DATABASE: pcs
-      MYSQL_USER: PCS
-      MYSQL_PASSWORD_FILE: /run/secrets/db_password
 
   db:
     image: ninerem/pcs-sql:latest
