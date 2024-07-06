@@ -816,6 +816,7 @@ INSERT INTO `pcs_type_piece` (`id_type_piece`, `nom_type_piece`) VALUES
 
 -- Biens
 -- Insertion de biens
+
 */
 INSERT INTO `pcs_bien` (`id_bien`,`nom_bien`, `statut_bien`, `adresse_bien`, `cp_bien`, `ville_bien`, `type_location_bien`, `capacite_bien`, `surface_bien`, `animal_ok_bien`, `PMR_ok_bien`, `description_bien`, `tarif_bien`, `bailleur`, `agence_principale_bien`,`heure_arrivee`,`heure_depart`) VALUES
 (1,'Villa avec vue sur la mer', 1, '5 rue Goury', '77654', 'Villeneuve la Garenne', 'Logement entier', 9, 150.00, 1, 1, 'Villa luxueuse avec vue sur la mer.', 130.00, 2, 1, 0, 0),
@@ -823,10 +824,7 @@ INSERT INTO `pcs_bien` (`id_bien`,`nom_bien`, `statut_bien`, `adresse_bien`, `cp
 (3,'Chalet en montagne', 1, '12 chemin des Neiges', '73000', 'Chambéry', 'Chalet', 6, 120.00, 1, 1, 'Chalet chaleureux au cœur des montagnes.', 150.00, 2, 1, 0, 0),
 (4,'Maison de campagne', 1, '8 rue de la Forêt', '45000', 'Orléans', 'Maison', 5, 110.00, 1, 0, 'Maison tranquille entourée de nature.', 100.00, 2, 1, 0, 0),
 (5,'Studio moderne', 1, '3 avenue des Champs', '06000', 'Nice', 'Studio', 2, 30.00, 0, 0, 'Studio moderne et bien équipé.', 70.00, 2, 1, 0, 0);
-/*
--- Pièces pour chaque bien
--- Villa avec vue sur la mer
-*/
+
 INSERT INTO `pcs_piece` (`nom_piece`, `description_piece`, `est_privatif_piece`, `bien_piece`, `surface_piece`, `type_piece`) VALUES
 ('Salon', 'Salon spacieux avec vue sur la mer.', 1, 1, 50.00, 1),
 ('Cuisine', 'Cuisine entièrement équipée.', 1, 1, 20.00, 3),

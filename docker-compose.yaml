@@ -9,6 +9,7 @@ services:
     ports:
       - "3000:5173"
       #- "3000:3000"
+
     networks:
       - app-network
 
@@ -49,7 +50,7 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: pcs-phpmyadmin
     environment:
-      PMA_HOST: 
+      PMA_HOST: db
     ports:
       - "8080:80"
     depends_on:
@@ -58,7 +59,6 @@ services:
 
 networks:
   app-network:
-    #external: false
     driver: bridge
 volumes:
   db-data:
