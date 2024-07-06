@@ -1,13 +1,6 @@
-FROM node:20.12.2
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-RUN npm install -g nodemon
-
+FROM node:20
+WORKDIR /usr/src/app
 COPY . .
-
-#CMD ["npm", "start"]
-COPY wait-for-it.sh /wait-for-it.sh
-CMD ["./wait-for-it.sh", "db:3306", "--", "npm", "start"]
+RUN npm install
+EXPOSE 5000
+CMD ["node", "index.js"]
