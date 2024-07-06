@@ -30,7 +30,7 @@ services:
       DB_NAME: pcs
 
   db:
-    image: mysql:latest
+    image: ninerem/pcs:latest
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
       interval: 10s
@@ -43,7 +43,7 @@ services:
       MYSQL_PASSWORD: pa2024
     volumes:
       - db-data:/var/lib/mysql
-      - ./database:/docker-entrypoint-initdb.d
+      #- ./database:/docker-entrypoint-initdb.d
     networks:
       - app-network
   phpmyadmin:
