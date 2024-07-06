@@ -51,9 +51,6 @@ services:
    - pcs-network
 
  client:
-#  build:
-#   context: ./client
-#   dockerfile: Dockerfile
   image: kirtikaasn/app_frontend:v1
   container_name: pcs_frontend
   ports:

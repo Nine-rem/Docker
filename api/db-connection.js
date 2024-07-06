@@ -1,10 +1,10 @@
 var mysql = require('mysql2');
 
 var connection = mysql.createConnection({
-  host: process.env.DB_HOST || 'database',
-  user: process.env.DB_USER || 'PCS',
+  host: 'database',
+  user: 'PCS',
   password: 'pa2024',
-  database: process.env.DB_NAME || 'pcs'
+  database: 'pcs'
 });
 
 connection.connect(function (err) {
