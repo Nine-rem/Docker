@@ -51,7 +51,7 @@ services:
    - pcs-network
 
  client:
-  image: kirtikaasn/app_frontend:v1
+  image: kirtikaasn/pcs_frontend:v1
   container_name: pcs_frontend
   ports:
    - "80:80"
