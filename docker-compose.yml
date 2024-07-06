@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
  database:
-  image: mysql:latest
+  image: mysql:5.7
   container_name: pcs_database
   env_file:
    - .env
@@ -43,16 +43,21 @@ services:
   entrypoint: ["/bin/sh", "/usr/src/app/start.sh"]
   command: [""]
   depends_on:
-   database:
-    condition: service_healthy
+    database:
+     condition: service_healthy
   ports:
    - "5000:5000"
   networks:
    - pcs-network
 
  client:
-  image: kirtikaasn/pcs_frontend:v1
+#  image: kirtikaasn/pcs_frontend:v1
+  build:
+   context: ./client
+   dockerfile: Dockerfile
   container_name: pcs_frontend
+  depends_on:
+   - api
   ports:
    - "80:80"
   networks:
