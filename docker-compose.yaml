@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   frontend:
+    container_name: pcs-frontend
     image: ninerem/docker-frontend:latest
     build:
       context: ./client
@@ -15,6 +16,7 @@ services:
       - pcs-network
 
   backend:
+    container_name: pcs-backend
     image: ninerem/docker-backend:latest
     build:
       context: ./api
@@ -35,6 +37,7 @@ services:
       - db_password
 
   db:
+    container_name: pcs-database
     image: ninerem/pcs-sql:latest
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
