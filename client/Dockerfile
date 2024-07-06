@@ -1,11 +1,7 @@
-FROM node:20 AS build
+FROM node:20.12.2
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install
+COPY package*.json ./
+RUN npm install
 COPY . .
-RUN yarn build
-
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "dev"]
