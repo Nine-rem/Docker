@@ -45,10 +45,12 @@ services:
       timeout: 5s
       retries: 3
     environment:
-      MYSQL_ROOT_PASSWORD: /oot
+      #MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: /run/secrets/db_root_password
       MYSQL_DATABASE: pcs
       MYSQL_USER: PCS
-      MYSQL_PASSWORD: pa2024
+      #MYSQL_PASSWORD: pa2024
+      MYSQL_PASSWORD: /run/secrets/db_password
     volumes:
       - db-data:/var/lib/mysql
       #- ./database:/docker-entrypoint-initdb.d
