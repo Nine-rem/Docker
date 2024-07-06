@@ -31,7 +31,8 @@ services:
     environment:
       DB_HOST: db
       DB_USER: PCS
-      DB_PASSWORD_FILE: /run/secrets/db_password
+      #DB_PASSWORD_FILE: /run/secrets/db_password
+      DB_PASSWORD: pa2024
       DB_NAME: pcs
     secrets:
       - db_password
@@ -45,12 +46,12 @@ services:
       timeout: 5s
       retries: 3
     environment:
-      #MYSQL_ROOT_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: /run/secrets/db_root_password
+      MYSQL_ROOT_PASSWORD: root
+      #MYSQL_ROOT_PASSWORD: /run/secrets/db_root_password
       MYSQL_DATABASE: pcs
       MYSQL_USER: PCS
-      #MYSQL_PASSWORD: pa2024
-      MYSQL_PASSWORD: /run/secrets/db_password
+      MYSQL_PASSWORD: pa2024
+      #MYSQL_PASSWORD: /run/secrets/db_password
     volumes:
       - db-data:/var/lib/mysql
       #- ./database:/docker-entrypoint-initdb.d
