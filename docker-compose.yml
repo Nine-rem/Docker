@@ -26,9 +26,10 @@ services:
    - pcs-network
 
  api:
-  build:
-   context: ./api
-   dockerfile: Dockerfile
+  image: kirtikaasn/app_api:v1.0
+#  build:
+#   context: ./api
+#   dockerfile: Dockerfile
   container_name: pcs_backend
   env_file:
    - .env
@@ -51,10 +52,10 @@ services:
    - pcs-network
 
  client:
-#  image: kirtikaasn/pcs_frontend:v1
-  build:
-   context: ./client
-   dockerfile: Dockerfile
+  image: kirtikaasn/app_client:v1.0
+#  build:
+#   context: ./client
+#   dockerfile: Dockerfile
   container_name: pcs_frontend
   depends_on:
    - api
